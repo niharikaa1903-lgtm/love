@@ -103,14 +103,16 @@ button {
 
 <!-- MUSIC -->
 <audio id="music" loop>
-  <source src="song.mp3" type="audio/mpeg">
+  <source src="./song.mp3" type="audio/mpeg">
 </audio>
+
 
 <!-- START SCREEN -->
 <div class="overlay" id="start">
   <h1>For You 💌</h1>
   <button onclick="startExperience()">Click to open 🥺</button>
 </div>
+
 
 <div class="container">
 
@@ -173,8 +175,13 @@ But I promise, I will grow, I will learn, and I will love you better every singl
 /* Start */
 function startExperience() {
   document.getElementById("start").style.display = "none";
-  document.getElementById("music").play();
+
+  var music = document.getElementById("music");
+  music.play().catch(() => {
+    alert("Tap anywhere again to play music 💗");
+  });
 }
+
 
 /* Popup */
 function openLetter() {
@@ -210,6 +217,15 @@ function createHeart() {
 setInterval(createHeart, 300);
 
 </script>
+  function startExperience() {
+  document.getElementById("start").style.display = "none";
+
+  var music = document.getElementById("music");
+  music.play().catch(() => {
+    alert("Tap again 💗");
+  });
+}
+
 
 </body>
 </html>
